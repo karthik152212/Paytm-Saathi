@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM"],
+    "module": "commonjs",
+    "moduleResolution": "node10",
+    "ignoreDeprecations": "6.0",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "verbatimModuleSyntax": false,
+    "allowImportingTsExtensions": false,
+    "resolveJsonModule": true,
+    "types": ["node"],
+    "jsx": "react-jsx",
+    "outDir": ".test-build",
+    "rootDir": ".",
+    "sourceMap": false,
+    "noEmit": false
+  },
+  "include": ["tests/**/*.ts"]
+}

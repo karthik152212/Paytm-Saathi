@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-surface text-ink antialiased;
+  font-family: 'Inter', ui-sans-serif, system-ui, 'Segoe UI', Roboto, sans-serif;
+  font-feature-settings: 'tnum' 0;
+}
+
+/* ---------- Simple Mode: larger, calmer type scale ---------- */
+html[data-simple='true'] {
+  font-size: 18px;
+}
+html[data-simple='true'] body {
+  line-height: 1.7;
+}
+html[data-simple='true'] .simple-hide {
+  display: none;
+}
+html[data-simple='true'] .simple-plain {
+  @apply text-[1.05rem] leading-relaxed font-medium;
+}
+
+/* ---------- primitives ---------- */
+@layer components {
+  .card {
+    @apply rounded-2xl border border-line bg-white shadow-card;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-3.5 py-2 text-sm font-semibold transition
+      focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2
+      disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn bg-brand-600 text-white hover:bg-brand-700 active:bg-brand-800;
+  }
+  .btn-ghost {
+    @apply btn border border-line bg-white text-ink hover:border-brand-300 hover:text-brand-700;
+  }
+  .btn-quiet {
+    @apply btn bg-surface text-ink-soft hover:bg-brand-50 hover:text-brand-700;
+  }
+  .btn-danger {
+    @apply btn border border-red-200 bg-white text-red-600 hover:bg-red-50;
+  }
+  .field {
+    @apply w-full rounded-lg border border-line bg-white px-3 py-2 text-sm text-ink placeholder:text-slate-400
+      focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-100;
+  }
+  .label {
+    @apply mb-1 block text-xs font-semibold uppercase tracking-wide text-ink-mute;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold;
+  }
+}
+
+/* ---------- scrollbars ---------- */
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  background: #cfd9e6;
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #b3c1d4;
+  background-clip: content-box;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* recharts focus cleanliness */
+.recharts-wrapper:focus,
+.recharts-surface:focus {
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
