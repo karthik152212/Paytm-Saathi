@@ -19,6 +19,7 @@ BACKEND_DIR = Path(__file__).resolve().parents[1]  # .../backend
 REPO_ROOT = BACKEND_DIR.parent
 DEFAULT_DATASETS_DIR = REPO_ROOT / "datasets"
 DEFAULT_DB_PATH = BACKEND_DIR / "runtime" / "saathi.db"
+DEFAULT_BACKUP_DIR = BACKEND_DIR / "backups"
 
 
 def _env(name: str, default: str) -> str:
@@ -36,6 +37,8 @@ class Settings:
     seed_on_start: bool
     allow_reset: bool
     storage_mode: str
+    backup_dir: Path
+    allow_data_admin: bool
 
     @property
     def database_file(self) -> Path | None:
@@ -54,6 +57,8 @@ def get_settings() -> Settings:
     seed_on_start = _env("SAATHI_SEED_ON_START", "1") != "0"
     allow_reset = _env("SAATHI_ALLOW_RESET", "0") == "1"
     storage_mode = "sqlite" if database_url.startswith("sqlite") else "external-database"
+    backup_dir = Path(_env("SAATHI_BACKUP_DIR", str(DEFAULT_BACKUP_DIR))).resolve()
+    allow_data_admin = _env("SAATHI_ALLOW_DATA_ADMIN", "0") == "1"
     return Settings(
         app_name=APP_NAME,
         version=APP_VERSION,
@@ -63,4 +68,6 @@ def get_settings() -> Settings:
         seed_on_start=seed_on_start,
         allow_reset=allow_reset,
         storage_mode=storage_mode,
+        backup_dir=backup_dir,
+        allow_data_admin=allow_data_admin,
     )

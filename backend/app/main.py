@@ -19,6 +19,7 @@ from .api import (
     assistant,
     budgets,
     bills,
+    data,
     dev,
     goals,
     health,
@@ -76,6 +77,7 @@ def create_app() -> FastAPI:
     app.include_router(insights.router)
     app.include_router(safety.router)
     app.include_router(assistant.router)
+    app.include_router(data.router)
     app.include_router(dev.router)
 
     return app

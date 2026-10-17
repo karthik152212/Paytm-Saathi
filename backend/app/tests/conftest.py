@@ -14,6 +14,8 @@ _TMP = Path(tempfile.mkdtemp(prefix="saathi-tests-"))
 os.environ["SAATHI_DATABASE_URL"] = f"sqlite:///{(_TMP / 'test.db').as_posix()}"
 os.environ["SAATHI_SEED_ON_START"] = "1"
 os.environ["SAATHI_ALLOW_RESET"] = "1"
+os.environ["SAATHI_BACKUP_DIR"] = str(_TMP / "backups")
+os.environ["SAATHI_ALLOW_DATA_ADMIN"] = "1"
 
 import pytest  # noqa: E402
 from fastapi.testclient import TestClient  # noqa: E402

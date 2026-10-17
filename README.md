@@ -30,8 +30,8 @@ flowchart LR
 | --- | --- | --- |
 | `frontend/` | React 19, TypeScript, Vite, Tailwind | 8 screens, selectors for all money math, optimistic UI |
 | `backend/` | FastAPI, SQLAlchemy 2, Pydantic, SQLite | Authoritative calculations, REST API, idempotent seeding |
-| `datasets/` | JSON | Single source of truth for the demo scenario |
-| `docs/` | Markdown | Architecture, data dictionary, API, data flow, demo guide |
+| `datasets/` | JSON | Initial seed scenario (never rewritten at runtime) |
+| `docs/` | Markdown | Architecture, data dictionary, API, data flow, data management, demo guide |
 
 ## Run it
 
@@ -56,7 +56,7 @@ LocalStorage cache; **Retry** on the chip re-syncs.
 | `npm run build` | Type-check + production build of the frontend |
 | `npm run lint` | oxlint |
 | `npm test` | 45 frontend logic tests (selectors, store, safety, assistant, mappers) |
-| `npm run test:backend` | 56 backend tests (API, seeding, formulas, persistence) |
+| `npm run test:backend` | 80 backend tests (API, seeding, formulas, persistence, data management) |
 | `npm run start:backend` | Uvicorn with auto-reload |
 
 ## Screens
@@ -82,9 +82,14 @@ the API and then re-hydrates the state from `/api/overview`, so
 server-computed values always win. LocalStorage holds only chat, Simple
 Mode and the offline cache. Seeding is non-destructive; a destructive reseed
 requires `SAATHI_ALLOW_RESET=1` plus an explicit `POST /api/dev/reseed`.
+The live database can be exported as versioned JSON, backed up to a
+timestamped directory, and restored through a validated, rollback-safe,
+explicitly-confirmed workflow (`docs/DATA_MANAGEMENT.md`) — restore is a
+local/admin workflow because the prototype has no authentication.
 
 - [Architecture](docs/ARCHITECTURE.md) · [Data flow](docs/DATA_FLOW.md)
 - [Data dictionary](docs/DATA_DICTIONARY.md) · [API reference](docs/API_DOCUMENTATION.md)
+- [Data management](docs/DATA_MANAGEMENT.md)
 - [Professor's demo guide](docs/PROFESSOR_DEMO_GUIDE.md)
 
 ## 2-minute live demo
@@ -113,9 +118,9 @@ static frontend anywhere and the backend on any Python host, then point
 
 ```
 frontend/     React app (src/, tests/, vite.config.ts with /api proxy)
-backend/      FastAPI app (app/, requirements.txt, runtime/ for SQLite)
+backend/      FastAPI app (app/, requirements.txt, runtime/ for SQLite, backups/ gitignored)
 datasets/     JSON seed files + generator + README
-docs/         Architecture, data dictionary, API, data flow, demo guide
+docs/         Architecture, data dictionary, API, data flow, data management, demo guide
 ```
 
 ## Next steps (out of scope for the prototype)

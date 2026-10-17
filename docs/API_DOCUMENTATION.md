@@ -23,6 +23,7 @@ shape: `{"detail": "…"}` with 404 (not found), 409 (conflict), 422
 | GET | `/api/accounts` · `/api/accounts/{id}` | Accounts with computed balance |
 | GET | `/api/transactions` | List + filters (`q`, `category_id`, `direction`, `account_id`, `limit`, `offset`) |
 | GET | `/api/transactions/{id}` | One transaction |
+| POST | `/api/transactions` | Create a transaction (validates account, category, amount > 0) |
 | GET/POST | `/api/budgets` | List / create |
 | PATCH/DELETE | `/api/budgets/{id}` | Change limit / remove |
 | GET/POST | `/api/goals` | List (+contributions) / create |
@@ -36,6 +37,12 @@ shape: `{"detail": "…"}` with 404 (not found), 409 (conflict), 422
 | GET | `/api/safety/alerts` | Deterministic safety scores, rules, checklist |
 | GET | `/api/assistant/suggested` | Suggested questions |
 | POST | `/api/assistant/chat` | Rule-based answer |
+| GET | `/api/data/export` | Download the live database as versioned JSON |
+| POST | `/api/data/backups` | Create a timestamped backup (403 unless `SAATHI_ALLOW_DATA_ADMIN=1`) |
+| GET | `/api/data/backups` | List backups with metadata |
+| GET | `/api/data/backups/{name}` | One backup's manifest |
+| POST | `/api/data/backups/{name}/validate` | Validate a backup (no database access) |
+| POST | `/api/data/backups/{name}/restore` | Restore snapshot/merge (admin flag + loopback + `confirm: true`) |
 | POST | `/api/dev/reseed` | Destructive restore (403 unless `SAATHI_ALLOW_RESET=1`) |
 
 ## Selected examples
@@ -165,6 +172,35 @@ Response:
 Intents: greeting, afford, save, bills, budget, spending, balance, goals,
 safety, income, explain (glossary). Unmatched input returns an honest
 fallback listing what it understands. Empty message → 422.
+
+### POST /api/transactions
+
+Request: `{"account_id": "acc_001", "merchant": "Test Cafe", "amount_paise": 9900,
+"direction": "debit", "category_id": "food"}` — optional `user_id` (must match
+the account owner), `transaction_date` (ISO string, defaults to now),
+`payment_method_label`, `description`. Response `201` with the created row;
+unknown account/category → 404, mismatched user → 422, amount ≤ 0 → 422.
+
+### Data management (export / backup / restore)
+
+```powershell
+# with the backend started using SAATHI_ALLOW_DATA_ADMIN=1
+Invoke-WebRequest "http://localhost:8000/api/data/export" -OutFile export.json
+$b = (Invoke-WebRequest -Method Post "http://localhost:8000/api/data/backups").Content | ConvertFrom-Json
+Invoke-WebRequest -Method Post "http://localhost:8000/api/data/backups/$($b.backup)/validate"
+$body = '{"mode": "snapshot", "confirm": true}'
+Invoke-WebRequest -Method Post -Body $body -ContentType "application/json" `
+  "http://localhost:8000/api/data/backups/$($b.backup)/restore"
+```
+
+Export returns the live database (`schema_version: "1.0"`, all nine tables,
+integer paise, no password/token fields — none exist in the schema). Backups
+write to `SAATHI_BACKUP_DIR` (default `backend/backups/`) with a
+`status: "complete"` manifest written last. Restore validates manifest,
+schema version, files, JSON structure, duplicate ids and foreign keys before
+touching anything, runs in one rollback-safe transaction, and requires the
+admin env flag, a loopback client and `confirm: true`. Full guide:
+[DATA_MANAGEMENT.md](DATA_MANAGEMENT.md).
 
 ### POST /api/dev/reseed
 

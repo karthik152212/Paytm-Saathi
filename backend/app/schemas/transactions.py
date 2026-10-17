@@ -1,6 +1,8 @@
 from __future__ import annotations
 
-from pydantic import BaseModel
+from typing import Literal
+
+from pydantic import BaseModel, Field
 
 from .common import iso_datetime, rupees
 
@@ -45,3 +47,15 @@ class TransactionListResponse(BaseModel):
     items: list[TransactionOut]
     total_count: int
     filters_applied: dict[str, str | None]
+
+
+class TransactionCreate(BaseModel):
+    account_id: str
+    user_id: str | None = None
+    merchant: str = Field(min_length=1, max_length=120)
+    amount_paise: int = Field(gt=0)
+    direction: Literal["debit", "credit"]
+    category_id: str
+    transaction_date: str | None = None
+    payment_method_label: str = Field(default="Paytm Wallet", max_length=32)
+    description: str | None = Field(default=None, max_length=500)

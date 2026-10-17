@@ -5,7 +5,6 @@ from sqlalchemy.orm import Session
 
 from .. import models
 
-
 def list_transactions(
     db: Session,
     *,
@@ -46,3 +45,21 @@ def count_transactions(db: Session, user_id: str | None = None) -> int:
     if user_id:
         stmt = stmt.where(models.Transaction.user_id == user_id)
     return db.scalar(stmt) or 0
+
+
+def next_transaction_id(db: Session) -> str:
+    rows = db.scalars(select(models.Transaction.transaction_id)).all()
+    nums: list[int] = []
+    for txn_id in rows:
+        suffix = txn_id.removeprefix("txn_")
+        if txn_id.startswith("txn_") and suffix.isdigit():
+            nums.append(int(suffix))
+    return f"txn_{max(nums, default=0) + 1:03d}"
+
+
+def create_transaction(db: Session, **fields) -> models.Transaction:
+    txn = models.Transaction(**fields)
+    db.add(txn)
+    db.commit()
+    db.refresh(txn)
+    return txn
