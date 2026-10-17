@@ -25,3 +25,15 @@ dist-ssr
 
 .test-build
 .playwright-cli
+
+# Python backend
+__pycache__/
+*.pyc
+.pytest_cache/
+backend/.venv/
+backend/runtime/
+install.log
+
+# local environment
+.env
+.env.local

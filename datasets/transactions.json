@@ -1,0 +1,612 @@
+{
+  "meta": {
+    "file": "transactions.json",
+    "title": "Simulated transactions",
+    "description": "30 fictional Indian transactions (24 in the current month window, 6 in the previous month) used for charts, filters, budgets and safety demos. The Neo Tech Store payment is an intentionally suspicious demo cluster.",
+    "generated_by": "datasets/generate_seed_files.py",
+    "generated_at": "2026-10-17T14:18:25",
+    "disclaimer": "Fictional demonstration data. No real people, bank accounts, cards, UPI identifiers, PINs or OTPs are represented here."
+  },
+  "records": [
+    {
+      "transaction_id": "txn_001",
+      "account_id": "acc_001",
+      "user_id": "usr_001",
+      "merchant": "Chai Point",
+      "amount_paise": 14000,
+      "direction": "debit",
+      "category_id": "food",
+      "transaction_date": "2026-10-17T09:12",
+      "seed_date": {
+        "kind": "day",
+        "days_ago": 0,
+        "hour": 9,
+        "minute": 12
+      },
+      "payment_method_label": "UPI",
+      "description": "Morning coffee",
+      "demo_risk_flag": false,
+      "demo_flag_reason": null
+    },
+    {
+      "transaction_id": "txn_002",
+      "account_id": "acc_001",
+      "user_id": "usr_001",
+      "merchant": "Zomato",
+      "amount_paise": 38600,
+      "direction": "debit",
+      "category_id": "food",
+      "transaction_date": "2026-10-17T13:40",
+      "seed_date": {
+        "kind": "day",
+        "days_ago": 0,
+        "hour": 13,
+        "minute": 40
+      },
+      "payment_method_label": "UPI",
+      "description": "Lunch order",
+      "demo_risk_flag": false,
+      "demo_flag_reason": null
+    },
+    {
+      "transaction_id": "txn_003",
+      "account_id": "acc_001",
+      "user_id": "usr_001",
+      "merchant": "Saravana Bhavan",
+      "amount_paise": 32000,
+      "direction": "debit",
+      "category_id": "food",
+      "transaction_date": "2026-10-16T11:05",
+      "seed_date": {
+        "kind": "day",
+        "days_ago": 1,
+        "hour": 11,
+        "minute": 5
+      },
+      "payment_method_label": "UPI",
+      "description": "South Indian thali",
+      "demo_risk_flag": false,
+      "demo_flag_reason": null
+    },
+    {
+      "transaction_id": "txn_004",
+      "account_id": "acc_001",
+      "user_id": "usr_001",
+      "merchant": "Uber",
+      "amount_paise": 21400,
+      "direction": "debit",
+      "category_id": "transport",
+      "transaction_date": "2026-10-16T20:15",
+      "seed_date": {
+        "kind": "day",
+        "days_ago": 1,
+        "hour": 20,
+        "minute": 15
+      },
+      "payment_method_label": "UPI",
+      "description": "Ride home",
+      "demo_risk_flag": false,
+      "demo_flag_reason": null
+    },
+    {
+      "transaction_id": "txn_005",
+      "account_id": "acc_001",
+      "user_id": "usr_001",
+      "merchant": "Metro Card",
+      "amount_paise": 50000,
+      "direction": "debit",
+      "category_id": "transport",
+      "transaction_date": "2026-10-15T08:45",
+      "seed_date": {
+        "kind": "day",
+        "days_ago": 2,
+        "hour": 8,
+        "minute": 45
+      },
+      "payment_method_label": "Wallet",
+      "description": "Transit top-up",
+      "demo_risk_flag": false,
+      "demo_flag_reason": null
+    },
+    {
+      "transaction_id": "txn_006",
+      "account_id": "acc_001",
+      "user_id": "usr_001",
+      "merchant": "Blinkit",
+      "amount_paise": 65900,
+      "direction": "debit",
+      "category_id": "food",
+      "transaction_date": "2026-10-15T19:10",
+      "seed_date": {
+        "kind": "day",
+        "days_ago": 2,
+        "hour": 19,
+        "minute": 10
+      },
+      "payment_method_label": "UPI",
+      "description": "Groceries for the week",
+      "demo_risk_flag": false,
+      "demo_flag_reason": null
+    },
+    {
+      "transaction_id": "txn_007",
+      "account_id": "acc_001",
+      "user_id": "usr_001",
+      "merchant": "Coursera",
+      "amount_paise": 149900,
+      "direction": "debit",
+      "category_id": "education",
+      "transaction_date": "2026-10-14T10:30",
+      "seed_date": {
+        "kind": "day",
+        "days_ago": 3,
+        "hour": 10,
+        "minute": 30
+      },
+      "payment_method_label": "Card",
+      "description": "Data Structures specialisation",
+      "demo_risk_flag": false,
+      "demo_flag_reason": null
+    },
+    {
+      "transaction_id": "txn_008",
+      "account_id": "acc_001",
+      "user_id": "usr_001",
+      "merchant": "BookMyShow",
+      "amount_paise": 48000,
+      "direction": "debit",
+      "category_id": "other",
+      "transaction_date": "2026-10-14T14:00",
+      "seed_date": {
+        "kind": "day",
+        "days_ago": 3,
+        "hour": 14,
+        "minute": 0
+      },
+      "payment_method_label": "UPI",
+      "description": "Movie tickets",
+      "demo_risk_flag": false,
+      "demo_flag_reason": null
+    },
+    {
+      "transaction_id": "txn_009",
+      "account_id": "acc_001",
+      "user_id": "usr_001",
+      "merchant": "Amazon",
+      "amount_paise": 174900,
+      "direction": "debit",
+      "category_id": "shopping",
+      "transaction_date": "2026-10-14T16:10",
+      "seed_date": {
+        "kind": "day",
+        "days_ago": 3,
+        "hour": 16,
+        "minute": 10
+      },
+      "payment_method_label": "Card",
+      "description": "Type-C hub and mouse pad",
+      "demo_risk_flag": false,
+      "demo_flag_reason": null
+    },
+    {
+      "transaction_id": "txn_010",
+      "account_id": "acc_001",
+      "user_id": "usr_001",
+      "merchant": "Neo Tech Store",
+      "amount_paise": 899900,
+      "direction": "debit",
+      "category_id": "other",
+      "transaction_date": "2026-10-14T01:12",
+      "seed_date": {
+        "kind": "day",
+        "days_ago": 3,
+        "hour": 1,
+        "minute": 12
+      },
+      "payment_method_label": "UPI",
+      "description": "Order #NX-88213",
+      "demo_risk_flag": true,
+      "demo_flag_reason": "Demo scenario: the merchant had never appeared before, the payment was unusually large for this account, and it was made at an unusual hour."
+    },
+    {
+      "transaction_id": "txn_011",
+      "account_id": "acc_001",
+      "user_id": "usr_001",
+      "merchant": "QuickCart Online",
+      "amount_paise": 249900,
+      "direction": "debit",
+      "category_id": "other",
+      "transaction_date": "2026-10-14T01:19",
+      "seed_date": {
+        "kind": "day",
+        "days_ago": 3,
+        "hour": 1,
+        "minute": 19
+      },
+      "payment_method_label": "UPI",
+      "description": "Order #QC-4471",
+      "demo_risk_flag": false,
+      "demo_flag_reason": null
+    },
+    {
+      "transaction_id": "txn_012",
+      "account_id": "acc_001",
+      "user_id": "usr_001",
+      "merchant": "SpinWin Rewards",
+      "amount_paise": 99900,
+      "direction": "debit",
+      "category_id": "other",
+      "transaction_date": "2026-10-14T01:26",
+      "seed_date": {
+        "kind": "day",
+        "days_ago": 3,
+        "hour": 1,
+        "minute": 26
+      },
+      "payment_method_label": "UPI",
+      "description": "Prize claim fee",
+      "demo_risk_flag": false,
+      "demo_flag_reason": null
+    },
+    {
+      "transaction_id": "txn_013",
+      "account_id": "acc_001",
+      "user_id": "usr_001",
+      "merchant": "Rapido",
+      "amount_paise": 9800,
+      "direction": "debit",
+      "category_id": "transport",
+      "transaction_date": "2026-10-13T12:15",
+      "seed_date": {
+        "kind": "day",
+        "days_ago": 4,
+        "hour": 12,
+        "minute": 15
+      },
+      "payment_method_label": "UPI",
+      "description": "Bike taxi to campus",
+      "demo_risk_flag": false,
+      "demo_flag_reason": null
+    },
+    {
+      "transaction_id": "txn_014",
+      "account_id": "acc_001",
+      "user_id": "usr_001",
+      "merchant": "DMart",
+      "amount_paise": 115000,
+      "direction": "debit",
+      "category_id": "food",
+      "transaction_date": "2026-10-13T18:30",
+      "seed_date": {
+        "kind": "day",
+        "days_ago": 4,
+        "hour": 18,
+        "minute": 30
+      },
+      "payment_method_label": "Card",
+      "description": "Monthly groceries",
+      "demo_risk_flag": false,
+      "demo_flag_reason": null
+    },
+    {
+      "transaction_id": "txn_015",
+      "account_id": "acc_001",
+      "user_id": "usr_001",
+      "merchant": "Udemy",
+      "amount_paise": 74900,
+      "direction": "debit",
+      "category_id": "education",
+      "transaction_date": "2026-10-12T09:50",
+      "seed_date": {
+        "kind": "day",
+        "days_ago": 5,
+        "hour": 9,
+        "minute": 50
+      },
+      "payment_method_label": "UPI",
+      "description": "React course",
+      "demo_risk_flag": false,
+      "demo_flag_reason": null
+    },
+    {
+      "transaction_id": "txn_016",
+      "account_id": "acc_001",
+      "user_id": "usr_001",
+      "merchant": "StreamFlix Premium",
+      "amount_paise": 64900,
+      "direction": "debit",
+      "category_id": "bills",
+      "transaction_date": "2026-10-12T21:10",
+      "seed_date": {
+        "kind": "day",
+        "days_ago": 5,
+        "hour": 21,
+        "minute": 10
+      },
+      "payment_method_label": "AutoPay",
+      "description": "Monthly subscription",
+      "demo_risk_flag": false,
+      "demo_flag_reason": null
+    },
+    {
+      "transaction_id": "txn_017",
+      "account_id": "acc_001",
+      "user_id": "usr_001",
+      "merchant": "IRCTC",
+      "amount_paise": 84500,
+      "direction": "debit",
+      "category_id": "transport",
+      "transaction_date": "2026-10-11T07:30",
+      "seed_date": {
+        "kind": "day",
+        "days_ago": 6,
+        "hour": 7,
+        "minute": 30
+      },
+      "payment_method_label": "Net Banking",
+      "description": "Train ticket home",
+      "demo_risk_flag": false,
+      "demo_flag_reason": null
+    },
+    {
+      "transaction_id": "txn_018",
+      "account_id": "acc_001",
+      "user_id": "usr_001",
+      "merchant": "Myntra",
+      "amount_paise": 129900,
+      "direction": "debit",
+      "category_id": "shopping",
+      "transaction_date": "2026-10-10T17:45",
+      "seed_date": {
+        "kind": "day",
+        "days_ago": 7,
+        "hour": 17,
+        "minute": 45
+      },
+      "payment_method_label": "Card",
+      "description": "Running shoes",
+      "demo_risk_flag": false,
+      "demo_flag_reason": null
+    },
+    {
+      "transaction_id": "txn_019",
+      "account_id": "acc_001",
+      "user_id": "usr_001",
+      "merchant": "BSES Electricity",
+      "amount_paise": 186000,
+      "direction": "debit",
+      "category_id": "bills",
+      "transaction_date": "2026-10-09T10:05",
+      "seed_date": {
+        "kind": "day",
+        "days_ago": 8,
+        "hour": 10,
+        "minute": 5
+      },
+      "payment_method_label": "UPI",
+      "description": "Monthly electricity bill",
+      "demo_risk_flag": false,
+      "demo_flag_reason": null
+    },
+    {
+      "transaction_id": "txn_020",
+      "account_id": "acc_001",
+      "user_id": "usr_001",
+      "merchant": "Zomato",
+      "amount_paise": 34200,
+      "direction": "debit",
+      "category_id": "food",
+      "transaction_date": "2026-10-09T22:20",
+      "seed_date": {
+        "kind": "day",
+        "days_ago": 8,
+        "hour": 22,
+        "minute": 20
+      },
+      "payment_method_label": "UPI",
+      "description": "Late night order",
+      "demo_risk_flag": false,
+      "demo_flag_reason": null
+    },
+    {
+      "transaction_id": "txn_021",
+      "account_id": "acc_001",
+      "user_id": "usr_001",
+      "merchant": "NexCorp Stipend",
+      "amount_paise": 3650000,
+      "direction": "credit",
+      "category_id": "other",
+      "transaction_date": "2026-10-16T09:00",
+      "seed_date": {
+        "kind": "day",
+        "days_ago": 1,
+        "hour": 9,
+        "minute": 0
+      },
+      "payment_method_label": "Net Banking",
+      "description": "Monthly stipend",
+      "demo_risk_flag": false,
+      "demo_flag_reason": null
+    },
+    {
+      "transaction_id": "txn_022",
+      "account_id": "acc_001",
+      "user_id": "usr_001",
+      "merchant": "Cashback Rewards",
+      "amount_paise": 35000,
+      "direction": "credit",
+      "category_id": "other",
+      "transaction_date": "2026-10-12T10:00",
+      "seed_date": {
+        "kind": "day",
+        "days_ago": 5,
+        "hour": 10,
+        "minute": 0
+      },
+      "payment_method_label": "Wallet",
+      "description": "Recharge cashback",
+      "demo_risk_flag": false,
+      "demo_flag_reason": null
+    },
+    {
+      "transaction_id": "txn_023",
+      "account_id": "acc_001",
+      "user_id": "usr_001",
+      "merchant": "Rahul Repaid",
+      "amount_paise": 85000,
+      "direction": "credit",
+      "category_id": "other",
+      "transaction_date": "2026-10-11T15:10",
+      "seed_date": {
+        "kind": "day",
+        "days_ago": 6,
+        "hour": 15,
+        "minute": 10
+      },
+      "payment_method_label": "UPI",
+      "description": "Shared dinner split",
+      "demo_risk_flag": false,
+      "demo_flag_reason": null
+    },
+    {
+      "transaction_id": "txn_024",
+      "account_id": "acc_001",
+      "user_id": "usr_001",
+      "merchant": "Myntra Refund",
+      "amount_paise": 120000,
+      "direction": "credit",
+      "category_id": "shopping",
+      "transaction_date": "2026-10-08T17:20",
+      "seed_date": {
+        "kind": "day",
+        "days_ago": 9,
+        "hour": 17,
+        "minute": 20
+      },
+      "payment_method_label": "UPI",
+      "description": "Returned jacket",
+      "demo_risk_flag": false,
+      "demo_flag_reason": null
+    },
+    {
+      "transaction_id": "txn_025",
+      "account_id": "acc_001",
+      "user_id": "usr_001",
+      "merchant": "College Fee",
+      "amount_paise": 650000,
+      "direction": "debit",
+      "category_id": "education",
+      "transaction_date": "2026-09-05T11:00",
+      "seed_date": {
+        "kind": "prev_month",
+        "day": 5,
+        "hour": 11,
+        "minute": 0
+      },
+      "payment_method_label": "Net Banking",
+      "description": "Semester fee instalment",
+      "demo_risk_flag": false,
+      "demo_flag_reason": null
+    },
+    {
+      "transaction_id": "txn_026",
+      "account_id": "acc_001",
+      "user_id": "usr_001",
+      "merchant": "AirFly Tickets",
+      "amount_paise": 1240000,
+      "direction": "debit",
+      "category_id": "transport",
+      "transaction_date": "2026-09-12T08:30",
+      "seed_date": {
+        "kind": "prev_month",
+        "day": 12,
+        "hour": 8,
+        "minute": 30
+      },
+      "payment_method_label": "Card",
+      "description": "Flight home for Diwali",
+      "demo_risk_flag": false,
+      "demo_flag_reason": null
+    },
+    {
+      "transaction_id": "txn_027",
+      "account_id": "acc_001",
+      "user_id": "usr_001",
+      "merchant": "Dominos Pizza",
+      "amount_paise": 54900,
+      "direction": "debit",
+      "category_id": "food",
+      "transaction_date": "2026-09-18T21:00",
+      "seed_date": {
+        "kind": "prev_month",
+        "day": 18,
+        "hour": 21,
+        "minute": 0
+      },
+      "payment_method_label": "UPI",
+      "description": "Family dinner",
+      "demo_risk_flag": false,
+      "demo_flag_reason": null
+    },
+    {
+      "transaction_id": "txn_028",
+      "account_id": "acc_001",
+      "user_id": "usr_001",
+      "merchant": "Decathlon",
+      "amount_paise": 219900,
+      "direction": "debit",
+      "category_id": "shopping",
+      "transaction_date": "2026-09-22T19:00",
+      "seed_date": {
+        "kind": "prev_month",
+        "day": 22,
+        "hour": 19,
+        "minute": 0
+      },
+      "payment_method_label": "Card",
+      "description": "Badminton racket",
+      "demo_risk_flag": false,
+      "demo_flag_reason": null
+    },
+    {
+      "transaction_id": "txn_029",
+      "account_id": "acc_001",
+      "user_id": "usr_001",
+      "merchant": "BSES Electricity",
+      "amount_paise": 178000,
+      "direction": "debit",
+      "category_id": "bills",
+      "transaction_date": "2026-09-25T10:15",
+      "seed_date": {
+        "kind": "prev_month",
+        "day": 25,
+        "hour": 10,
+        "minute": 15
+      },
+      "payment_method_label": "UPI",
+      "description": "Previous month bill",
+      "demo_risk_flag": false,
+      "demo_flag_reason": null
+    },
+    {
+      "transaction_id": "txn_030",
+      "account_id": "acc_001",
+      "user_id": "usr_001",
+      "merchant": "NexCorp Stipend",
+      "amount_paise": 3650000,
+      "direction": "credit",
+      "category_id": "other",
+      "transaction_date": "2026-09-01T09:00",
+      "seed_date": {
+        "kind": "prev_month",
+        "day": 1,
+        "hour": 9,
+        "minute": 0
+      },
+      "payment_method_label": "Net Banking",
+      "description": "Monthly stipend",
+      "demo_risk_flag": false,
+      "demo_flag_reason": null
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "file": "monthly_history.json",
+    "title": "Historical monthly spending",
+    "description": "Aggregate spending for months older than the seeded transaction window, used only by the 6-month trend chart.",
+    "generated_by": "datasets/generate_seed_files.py",
+    "generated_at": "2026-10-17T14:18:25",
+    "disclaimer": "Fictional demonstration data. No real people, bank accounts, cards, UPI identifiers, PINs or OTPs are represented here."
+  },
+  "records": [
+    {
+      "month": "2026-05",
+      "seed_month": {
+        "kind": "month_offset",
+        "offset": 5
+      },
+      "spending_paise": 2240000,
+      "note": "Historical aggregate for months with no seeded transactions."
+    },
+    {
+      "month": "2026-06",
+      "seed_month": {
+        "kind": "month_offset",
+        "offset": 4
+      },
+      "spending_paise": 2480000,
+      "note": "Historical aggregate for months with no seeded transactions."
+    },
+    {
+      "month": "2026-07",
+      "seed_month": {
+        "kind": "month_offset",
+        "offset": 3
+      },
+      "spending_paise": 2730000,
+      "note": "Historical aggregate for months with no seeded transactions."
+    },
+    {
+      "month": "2026-08",
+      "seed_month": {
+        "kind": "month_offset",
+        "offset": 2
+      },
+      "spending_paise": 2510000,
+      "note": "Historical aggregate for months with no seeded transactions."
+    }
+  ]
+}

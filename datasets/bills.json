@@ -1,0 +1,117 @@
+{
+  "meta": {
+    "file": "bills.json",
+    "title": "Bills and reminders",
+    "description": "Upcoming and paid bills. 'mark-paid' only changes demonstration state — no payment is ever processed.",
+    "generated_by": "datasets/generate_seed_files.py",
+    "generated_at": "2026-10-17T14:18:25",
+    "disclaimer": "Fictional demonstration data. No real people, bank accounts, cards, UPI identifiers, PINs or OTPs are represented here."
+  },
+  "records": [
+    {
+      "bill_id": "bill_001",
+      "user_id": "usr_001",
+      "title": "Gym Membership",
+      "amount_paise": 150000,
+      "due_date": "2026-10-15",
+      "seed_due_date": {
+        "kind": "offset_days",
+        "offset": -2
+      },
+      "status": "upcoming",
+      "recurring": true,
+      "category_id": "other",
+      "paid_date": null,
+      "seed_paid_date": null,
+      "created_at": "2026-01-05T10:15:00"
+    },
+    {
+      "bill_id": "bill_002",
+      "user_id": "usr_001",
+      "title": "Airtel Mobile Recharge",
+      "amount_paise": 29900,
+      "due_date": "2026-10-19",
+      "seed_due_date": {
+        "kind": "offset_days",
+        "offset": 2
+      },
+      "status": "upcoming",
+      "recurring": true,
+      "category_id": "bills",
+      "paid_date": null,
+      "seed_paid_date": null,
+      "created_at": "2026-01-05T10:15:00"
+    },
+    {
+      "bill_id": "bill_003",
+      "user_id": "usr_001",
+      "title": "Electricity Bill (BSES)",
+      "amount_paise": 142000,
+      "due_date": "2026-10-22",
+      "seed_due_date": {
+        "kind": "offset_days",
+        "offset": 5
+      },
+      "status": "upcoming",
+      "recurring": true,
+      "category_id": "bills",
+      "paid_date": null,
+      "seed_paid_date": null,
+      "created_at": "2026-01-05T10:15:00"
+    },
+    {
+      "bill_id": "bill_004",
+      "user_id": "usr_001",
+      "title": "ACT Fibernet Internet",
+      "amount_paise": 119900,
+      "due_date": "2026-10-24",
+      "seed_due_date": {
+        "kind": "offset_days",
+        "offset": 7
+      },
+      "status": "upcoming",
+      "recurring": true,
+      "category_id": "bills",
+      "paid_date": null,
+      "seed_paid_date": null,
+      "created_at": "2026-01-05T10:15:00"
+    },
+    {
+      "bill_id": "bill_005",
+      "user_id": "usr_001",
+      "title": "Semester Exam Form Fee",
+      "amount_paise": 120000,
+      "due_date": "2026-10-30",
+      "seed_due_date": {
+        "kind": "offset_days",
+        "offset": 13
+      },
+      "status": "upcoming",
+      "recurring": false,
+      "category_id": "education",
+      "paid_date": null,
+      "seed_paid_date": null,
+      "created_at": "2026-01-05T10:15:00"
+    },
+    {
+      "bill_id": "bill_006",
+      "user_id": "usr_001",
+      "title": "StreamFlix Premium",
+      "amount_paise": 64900,
+      "due_date": "2026-10-14",
+      "seed_due_date": {
+        "kind": "offset_days",
+        "offset": -3
+      },
+      "status": "paid",
+      "recurring": true,
+      "category_id": "bills",
+      "paid_date": "2026-10-14",
+      "seed_paid_date": {
+        "kind": "offset_days",
+        "offset": -3
+      },
+      "created_at": "2026-01-05T10:15:00"
+    }
+  ]
+}

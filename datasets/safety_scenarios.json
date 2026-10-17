@@ -1,0 +1,71 @@
+{
+  "meta": {
+    "file": "safety_scenarios.json",
+    "title": "Safety demo scenarios",
+    "description": "Explicitly labelled fictional scenarios used by the Safety Center explanation, the backend tests and the professor demo guide. The scoring rules themselves are NOT stored here — they live in backend/app/services/safety.py so data and rules stay separate.",
+    "generated_by": "datasets/generate_seed_files.py",
+    "generated_at": "2026-10-17T14:18:25",
+    "disclaimer": "Fictional demonstration data. No real people, bank accounts, cards, UPI identifiers, PINs or OTPs are represented here."
+  },
+  "records": [
+    {
+      "scenario_id": "sc_high_value_unusual_payment",
+      "title": "High-value payment to a never-seen-before merchant",
+      "description": "A single ₹8,999 payment at 1:12 AM to a merchant that has no history in this account. Illustrates the unusual-amount rule.",
+      "related_transaction_ids": [
+        "txn_010"
+      ],
+      "expected_rule_codes": [
+        "flagged",
+        "large-amount",
+        "unusual-hour",
+        "burst"
+      ],
+      "expected_severity": "high",
+      "should_raise_alert": true,
+      "teaching_note": "Three independent rules fire on one payment; each is explained in plain English."
+    },
+    {
+      "scenario_id": "sc_payment_burst",
+      "title": "Burst of payments within one hour",
+      "description": "Three debits (₹8,999, ₹2,499, ₹999) recorded within 14 minutes at night — the pattern account-draining attacks produce.",
+      "related_transaction_ids": [
+        "txn_010",
+        "txn_011",
+        "txn_012"
+      ],
+      "expected_rule_codes": [
+        "burst"
+      ],
+      "expected_severity": "medium",
+      "should_raise_alert": true,
+      "teaching_note": "Burst detection is time-window based and independent of merchant or amount."
+    },
+    {
+      "scenario_id": "sc_explicit_demo_flag",
+      "title": "Transaction explicitly marked in the demo dataset",
+      "description": "demo_risk_flag=true on txn_010 with an explanation string. Shows how an upstream warning (here: the dataset itself) is surfaced with full attribution.",
+      "related_transaction_ids": [
+        "txn_010"
+      ],
+      "expected_rule_codes": [
+        "flagged"
+      ],
+      "expected_severity": "medium",
+      "should_raise_alert": true,
+      "teaching_note": "The flag alone contributes 40 points and always quotes its stored reason."
+    },
+    {
+      "scenario_id": "sc_normal_payment",
+      "title": "Ordinary payment that must NOT be treated as fraud",
+      "description": "A ₹140 chai purchase at 9:12 AM through UPI. No rule triggers; the demo proves ordinary payments never appear in the alert list.",
+      "related_transaction_ids": [
+        "txn_001"
+      ],
+      "expected_rule_codes": [],
+      "expected_severity": null,
+      "should_raise_alert": false,
+      "teaching_note": "A safety system that flags everything teaches users to ignore it."
+    }
+  ]
+}

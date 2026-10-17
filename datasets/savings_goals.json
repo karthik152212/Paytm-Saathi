@@ -1,0 +1,103 @@
+{
+  "meta": {
+    "file": "savings_goals.json",
+    "title": "Savings goals and contribution history",
+    "description": "Goal targets are authoritative; saved_amount_paise is maintained by the backend whenever a contribution is recorded. Contributions are the audit trail behind 'saved this month' and the available balance.",
+    "generated_by": "datasets/generate_seed_files.py",
+    "generated_at": "2026-10-17T14:18:25",
+    "disclaimer": "Fictional demonstration data. No real people, bank accounts, cards, UPI identifiers, PINs or OTPs are represented here."
+  },
+  "records": {
+    "goals": [
+      {
+        "goal_id": "goal_001",
+        "user_id": "usr_001",
+        "title": "Emergency Fund",
+        "target_amount_paise": 5000000,
+        "saved_amount_paise": 2150000,
+        "target_date": "2027-02-14",
+        "seed_target_date": {
+          "kind": "offset_days",
+          "offset": 120
+        },
+        "note": "Three months of basic expenses, kept aside for surprises.",
+        "created_at": "2026-01-05T10:10:00",
+        "updated_at": "2026-01-05T10:10:00"
+      },
+      {
+        "goal_id": "goal_002",
+        "user_id": "usr_001",
+        "title": "New Laptop",
+        "target_amount_paise": 7500000,
+        "saved_amount_paise": 3200000,
+        "target_date": "2027-03-16",
+        "seed_target_date": {
+          "kind": "offset_days",
+          "offset": 150
+        },
+        "note": "For final-year projects and placements.",
+        "created_at": "2026-01-05T10:10:00",
+        "updated_at": "2026-01-05T10:10:00"
+      },
+      {
+        "goal_id": "goal_003",
+        "user_id": "usr_001",
+        "title": "Goa Trip",
+        "target_amount_paise": 3000000,
+        "saved_amount_paise": 650000,
+        "target_date": "2027-01-15",
+        "seed_target_date": {
+          "kind": "offset_days",
+          "offset": 90
+        },
+        "note": "December trip with friends.",
+        "created_at": "2026-01-05T10:10:00",
+        "updated_at": "2026-01-05T10:10:00"
+      }
+    ],
+    "contributions": [
+      {
+        "contribution_id": "con_001",
+        "goal_id": "goal_001",
+        "user_id": "usr_001",
+        "amount_paise": 300000,
+        "created_at": "2026-10-13T19:30",
+        "seed_date": {
+          "kind": "day",
+          "days_ago": 4,
+          "hour": 19,
+          "minute": 30
+        },
+        "note": "Seed contribution"
+      },
+      {
+        "contribution_id": "con_002",
+        "goal_id": "goal_002",
+        "user_id": "usr_001",
+        "amount_paise": 400000,
+        "created_at": "2026-10-11T20:15",
+        "seed_date": {
+          "kind": "day",
+          "days_ago": 6,
+          "hour": 20,
+          "minute": 15
+        },
+        "note": "Seed contribution"
+      },
+      {
+        "contribution_id": "con_003",
+        "goal_id": "goal_003",
+        "user_id": "usr_001",
+        "amount_paise": 150000,
+        "created_at": "2026-10-15T18:00",
+        "seed_date": {
+          "kind": "day",
+          "days_ago": 2,
+          "hour": 18,
+          "minute": 0
+        },
+        "note": "Seed contribution"
+      }
+    ]
+  }
+}

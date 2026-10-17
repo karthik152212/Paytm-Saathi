@@ -1,0 +1,34 @@
+{
+  "meta": {
+    "file": "accounts.json",
+    "title": "Demo accounts",
+    "description": "Simulated accounts. Opening balances are fictional and every derived balance is simulated — no bank or wallet is connected.",
+    "generated_by": "datasets/generate_seed_files.py",
+    "generated_at": "2026-10-17T14:18:25",
+    "disclaimer": "Fictional demonstration data. No real people, bank accounts, cards, UPI identifiers, PINs or OTPs are represented here."
+  },
+  "records": [
+    {
+      "account_id": "acc_001",
+      "user_id": "usr_001",
+      "account_type": "savings",
+      "display_label": "Demo Savings Account",
+      "currency": "INR",
+      "opening_balance_paise": 3800000,
+      "account_status": "active",
+      "is_demo_account": true,
+      "is_simulated": true
+    },
+    {
+      "account_id": "acc_002",
+      "user_id": "usr_002",
+      "account_type": "wallet",
+      "display_label": "Demo Wallet (Meera)",
+      "currency": "INR",
+      "opening_balance_paise": 500000,
+      "account_status": "active",
+      "is_demo_account": true,
+      "is_simulated": true
+    }
+  ]
+}

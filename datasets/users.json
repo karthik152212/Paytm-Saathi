@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "file": "users.json",
+    "title": "Demo users",
+    "description": "Fictional demo profiles. These records do not authenticate anyone and contain no passwords, hashes, phone numbers or real personal data.",
+    "generated_by": "datasets/generate_seed_files.py",
+    "generated_at": "2026-10-17T14:18:25",
+    "disclaimer": "Fictional demonstration data. No real people, bank accounts, cards, UPI identifiers, PINs or OTPs are represented here."
+  },
+  "records": [
+    {
+      "user_id": "usr_001",
+      "display_name": "Aarav Sharma",
+      "demo_email": "aarav.sharma@example.com",
+      "preferred_language": "en-IN",
+      "accessibility_preferences": {
+        "simple_mode_default": false,
+        "large_text": false
+      },
+      "created_at": "2026-01-05T10:00:00",
+      "is_demo_user": true,
+      "subtitle": "Student · Demo account"
+    },
+    {
+      "user_id": "usr_002",
+      "display_name": "Meera Iyer",
+      "demo_email": "meera.iyer@example.com",
+      "preferred_language": "en-IN",
+      "accessibility_preferences": {
+        "simple_mode_default": true,
+        "large_text": true
+      },
+      "created_at": "2026-02-11T10:00:00",
+      "is_demo_user": true,
+      "subtitle": "Second demo profile · empty account"
+    }
+  ]
+}

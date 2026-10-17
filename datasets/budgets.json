@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "file": "budgets.json",
+    "title": "Monthly budgets",
+    "description": "Category spending limits. 'spent' is never stored here — it is always derived from transactions.",
+    "generated_by": "datasets/generate_seed_files.py",
+    "generated_at": "2026-10-17T14:18:25",
+    "disclaimer": "Fictional demonstration data. No real people, bank accounts, cards, UPI identifiers, PINs or OTPs are represented here."
+  },
+  "records": [
+    {
+      "budget_id": "bud_food",
+      "user_id": "usr_001",
+      "category_id": "food",
+      "monthly_limit_paise": 600000,
+      "period": "monthly",
+      "created_at": "2026-01-05T10:05:00",
+      "updated_at": "2026-01-05T10:05:00"
+    },
+    {
+      "budget_id": "bud_transport",
+      "user_id": "usr_001",
+      "category_id": "transport",
+      "monthly_limit_paise": 300000,
+      "period": "monthly",
+      "created_at": "2026-01-05T10:05:00",
+      "updated_at": "2026-01-05T10:05:00"
+    },
+    {
+      "budget_id": "bud_shopping",
+      "user_id": "usr_001",
+      "category_id": "shopping",
+      "monthly_limit_paise": 340000,
+      "period": "monthly",
+      "created_at": "2026-01-05T10:05:00",
+      "updated_at": "2026-01-05T10:05:00"
+    },
+    {
+      "budget_id": "bud_bills",
+      "user_id": "usr_001",
+      "category_id": "bills",
+      "monthly_limit_paise": 400000,
+      "period": "monthly",
+      "created_at": "2026-01-05T10:05:00",
+      "updated_at": "2026-01-05T10:05:00"
+    },
+    {
+      "budget_id": "bud_education",
+      "user_id": "usr_001",
+      "category_id": "education",
+      "monthly_limit_paise": 300000,
+      "period": "monthly",
+      "created_at": "2026-01-05T10:05:00",
+      "updated_at": "2026-01-05T10:05:00"
+    }
+  ]
+}

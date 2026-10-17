@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "file": "categories.json",
+    "title": "Spending categories",
+    "description": "Display metadata for the six spending categories used across the app.",
+    "generated_by": "datasets/generate_seed_files.py",
+    "generated_at": "2026-10-17T14:18:25",
+    "disclaimer": "Fictional demonstration data. No real people, bank accounts, cards, UPI identifiers, PINs or OTPs are represented here."
+  },
+  "records": [
+    {
+      "category_id": "food",
+      "display_label": "Food",
+      "color_hex": "#F59E0B",
+      "icon": "utensils",
+      "sort_order": 1
+    },
+    {
+      "category_id": "transport",
+      "display_label": "Transport",
+      "color_hex": "#3B82F6",
+      "icon": "car",
+      "sort_order": 2
+    },
+    {
+      "category_id": "shopping",
+      "display_label": "Shopping",
+      "color_hex": "#A855F7",
+      "icon": "shopping-bag",
+      "sort_order": 3
+    },
+    {
+      "category_id": "bills",
+      "display_label": "Bills",
+      "color_hex": "#EF4444",
+      "icon": "receipt",
+      "sort_order": 4
+    },
+    {
+      "category_id": "education",
+      "display_label": "Education",
+      "color_hex": "#10B981",
+      "icon": "graduation-cap",
+      "sort_order": 5
+    },
+    {
+      "category_id": "other",
+      "display_label": "Other",
+      "color_hex": "#64748B",
+      "icon": "shapes",
+      "sort_order": 6
+    }
+  ]
+}

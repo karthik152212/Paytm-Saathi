@@ -1,32 +1,16 @@
 {
-  "name": "sem-3",
+  "name": "paytm-saathi",
+  "version": "1.0.0",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "description": "Paytm Saathi - From Payments to Progress. Full-stack demonstration prototype.",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "oxlint",
-    "preview": "vite preview",
-    "test": "tsc -p tsconfig.test.json && node --test .test-build/tests/logic.test.js"
-  },
-  "dependencies": {
-    "autoprefixer": "^10.6.1",
-    "clsx": "^2.1.1",
-    "lucide-react": "^1.55.0",
-    "postcss": "^8.5.29",
-    "react": "^19.2.8",
-    "react-dom": "^19.2.8",
-    "recharts": "^3.10.1",
-    "tailwindcss": "^3.4.19"
-  },
-  "devDependencies": {
-    "@types/node": "^24.13.3",
-    "@types/react": "^19.2.18",
-    "@types/react-dom": "^19.2.7",
-    "@vitejs/plugin-react": "^6.1.1",
-    "oxlint": "^1.81.0",
-    "typescript": "~6.0.2",
-    "vite": "^8.3.0"
+    "dev": "npm --prefix frontend run dev",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "lint": "npm --prefix frontend run lint",
+    "test": "npm --prefix frontend run test",
+    "test:frontend": "npm --prefix frontend run test",
+    "test:backend": "backend\\.venv\\Scripts\\python -m pytest backend/app/tests -q",
+    "start:backend": "backend\\.venv\\Scripts\\python -m uvicorn app.main:app --app-dir backend --port 8000 --reload"
   }
 }
